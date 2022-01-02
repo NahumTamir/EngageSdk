@@ -13,14 +13,14 @@ dependencies {
 }
 
 <uses-permission android:name="android.permission.INTERNET" />
-Manifest Engage credentials (Provided by the admin Engage system)
-    <application>
 
+Manifest Engage credentials (Provided by the admin Engage system)
+
+<application>
         <meta-data
             android:name="engage_sdk"
             android:value="developer_id" />
-            
-    <application/>
+<application/>
             
 
 Step 2.          

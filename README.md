@@ -42,15 +42,16 @@ Engage.initSdk(this)
         
 Step 4.
 For calculating time played add these methods in the game activity
-   override fun onResume() {
-        super.onResume()
-        gamePlayApi.startGameTimeCount()
-    }
 
-    override fun onStop() {
-        super.onStop()
-        gamePlayApi.stopGameTimeCount()
-    }
+                              override fun onResume() {
+                                      super.onResume()
+                                      gamePlayApi.startGameTimeCount()
+                                  }
+
+                              override fun onStop() {
+                                      super.onStop()
+                                      gamePlayApi.stopGameTimeCount()
+                                  }
     
 Step 5.
 Use gamePlayApi to add any event in your game

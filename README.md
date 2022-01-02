@@ -15,6 +15,7 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 
 Manifest Engage credentials (Provided by the admin Engage system)
+
 {
   <application>
           <meta-data

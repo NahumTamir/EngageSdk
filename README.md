@@ -62,6 +62,7 @@ Step 5.
 Use gamePlayApi to add any event in your game
 For example: 
  // Developer should use the gamePlayApi to interact with the Engage system
+          
                             gamePlayApi.addPoints(13)
                             gamePlayApi.addAchievements(arrayListOf("Beginners Luck"))
                             gamePlayApi.getLeaderBoard()

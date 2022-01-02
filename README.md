@@ -16,11 +16,11 @@ dependencies {
 
 Manifest Engage credentials (Provided by the admin Engage system)
 {
-<application>
-        <meta-data
-            android:name="engage_sdk"
-            android:value="developer_id" />
-<application/>
+  <application>
+          <meta-data
+              android:name="engage_sdk"
+              android:value="developer_id" />
+  <application/>
 }           
 
 Step 2.          

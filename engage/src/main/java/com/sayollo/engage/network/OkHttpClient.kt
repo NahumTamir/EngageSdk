@@ -4,7 +4,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
-internal class AppOkHttpClient : OkHttpClient() {
+internal class OkHttpClient : OkHttpClient() {
     companion object {
         @Volatile
         private var iInstance: OkHttpClient? = null

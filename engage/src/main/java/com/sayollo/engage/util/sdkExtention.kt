@@ -2,10 +2,7 @@ package com.sayollo.engage.util
 
 import android.content.Context
 import android.util.Log
-import android.webkit.WebSettings
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
-import java.util.*
-
 
 fun Context.getAdsID(): String? {
     try {
@@ -22,15 +19,6 @@ fun Context.getAdsID(): String? {
     return ""
 }
 
-fun Context.getHeaders(): Map<String, String> {
-    val headerMap = mutableMapOf<String, String>()
-    headerMap["Content-Encoding"] = "gzip"
-    headerMap["User-Agent"] = WebSettings.getDefaultUserAgent(this)
-    headerMap["Package-Name"] = packageName
-    headerMap["Locale"] = Locale.getDefault().language
-    headerMap["Content-Type"] = "application/x-www-form-urlencoded"
-    return headerMap
-}
 
 
 

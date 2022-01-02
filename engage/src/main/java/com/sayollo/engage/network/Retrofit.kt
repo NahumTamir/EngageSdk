@@ -1,15 +1,12 @@
 package com.sayollo.engage.network
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.google.gson.GsonBuilder
-
-import com.google.gson.Gson
 
 
-
-
-internal class AppRetrofit {
+internal class Retrofit {
     companion object {
         @Volatile
         private var iInstance: Retrofit? = null
@@ -24,7 +21,7 @@ internal class AppRetrofit {
                 synchronized(this) {
                     val instance = Retrofit.Builder()
                         .baseUrl(url)
-                        .client(AppOkHttpClient.getOkHttpClient())
+                        .client(OkHttpClient.getOkHttpClient())
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build()
                     iInstance = instance

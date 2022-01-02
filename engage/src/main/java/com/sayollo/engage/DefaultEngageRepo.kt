@@ -2,41 +2,47 @@ package com.sayollo.engage
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
 
 class DefaultEngageRepo(context: Context) : EngageRepo {
 
     private val sp: SharedPreferences = context.getSharedPreferences("engage_repo", Context.MODE_PRIVATE)
 
-    override fun getTimePlayed(): Int {
-        TODO("Not yet implemented")
+    override fun getTimePlayed(): Long {
+        return sp.getLong("TIME_PLAYED_KEY", 0L)
     }
 
     override fun addTimePlayed(timePlayed: Long) {
-        TODO("Not yet implemented")
+        sp.edit().putLong("TIME_PLAYED_KEY", getTimePlayed() + timePlayed).apply()
+
     }
 
     override fun addAchievements(achievementsList: ArrayList<String>) {
-        TODO("Not yet implemented")
+        sp.edit().putString("ACHIEVEMENTS_KEY", Gson().toJson(achievementsList)).apply()
     }
 
-    override fun getAchievement(): String {
-        TODO("Not yet implemented")
+    override fun getAchievements(): ArrayList<String> {
+
+        val achievementsList = sp.getString("ACHIEVEMENTS_KEY", "")
+        return Gson().fromJson(achievementsList, object : TypeToken<List<String?>?>() {}.type)
     }
 
     override fun addPoints(points: Int) {
-        TODO("Not yet implemented")
+        sp.edit().putInt("POINTS_KEY", points).apply()
     }
 
     override fun getPoints(): Int {
-        TODO("Not yet implemented")
+        return sp.getInt("POINTS_KEY", 0)
     }
 
-    override fun setLevelReached() {
-        TODO("Not yet implemented")
+    override fun setLevelReached(levelReached: Int) {
+        sp.edit().putInt("LEVEL_REACHED_KEY", levelReached).apply()
     }
 
-    override fun getLevelReached(levelReached: Int): Int {
-        TODO("Not yet implemented")
+    override fun getLevelReached(): Int {
+        return sp.getInt("LEVEL_REACHED_KEY", 0)
     }
 
     override fun getGamePlayData(): UserGameData {

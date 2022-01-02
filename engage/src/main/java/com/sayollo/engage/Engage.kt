@@ -2,10 +2,14 @@ package com.sayollo.engage
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.util.Log
 import android.webkit.WebSettings
 import com.sayollo.engage.api.DefaultGamePlayAPI
 import com.sayollo.engage.api.OnGamePlayDataChanged
 import com.sayollo.engage.util.getAdsID
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 
 object Engage {
@@ -14,14 +18,20 @@ object Engage {
         // initialize user profile
         userProfile = initUserProfile(context)
 
-        val onGamePlayDataChanged  = object : OnGamePlayDataChanged {
+        val onGamePlayDataChanged = object : OnGamePlayDataChanged {
             override fun onChanged(userGameData: UserGameData) {
-                UpdateDataInServer.run(UserData(userProfile, userGameData))
+                try {
+                    CoroutineScope(GlobalScope.launch {
+                        UpdateDataInServer.run(UserData(userProfile, userGameData))
+                    })
+                }catch (throwable:Throwable){
+                    Log.i("TAMIR", "onChanged: ${throwable.message}")
+                }
             }
         }
 
         // return the user API for GamePlay integration
-        return InitResult.InitSuccess(DefaultGamePlayAPI(DefaultEngageRepo(context),onGamePlayDataChanged))
+        return InitResult.InitSuccess(DefaultGamePlayAPI(DefaultEngageRepo(context), onGamePlayDataChanged))
     }
 
     private fun initUserProfile(context: Context): UserProfile {

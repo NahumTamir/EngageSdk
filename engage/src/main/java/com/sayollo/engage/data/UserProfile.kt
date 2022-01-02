@@ -1,6 +1,6 @@
-package com.sayollo.engage
+package com.sayollo.engage.data
 
-data class UserProfile(
+internal data class UserProfile(
     val developerId: String?,
     val adsId: String?,
     var userAgent: String?,

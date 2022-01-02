@@ -1,6 +1,6 @@
-package com.sayollo.engage
+package com.sayollo.engage.data
 
-data class UserData(
+internal data class UserData(
     var userProfile: UserProfile,
     var userGameData: UserGameData
 )

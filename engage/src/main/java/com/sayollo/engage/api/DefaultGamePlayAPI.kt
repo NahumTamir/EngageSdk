@@ -1,8 +1,8 @@
 package com.sayollo.engage.api
 
-import com.sayollo.engage.EngageRepo
+import com.sayollo.engage.data.EngageRepo
 
-class DefaultGamePlayAPI(
+internal class DefaultGamePlayAPI(
     private val repository: EngageRepo,
     private val onGamePlayDataChanged: OnGamePlayDataChanged
 ) : GamePlayAPI {
@@ -36,7 +36,7 @@ class DefaultGamePlayAPI(
     }
 
     override fun setLevelReached(levelReached: Int) {
-        repository.getLevelReached(levelReached)
+        repository.setLevelReached(levelReached)
         update()
     }
 

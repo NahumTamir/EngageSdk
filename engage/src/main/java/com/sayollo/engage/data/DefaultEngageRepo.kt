@@ -1,12 +1,14 @@
-package com.sayollo.engage
+package com.sayollo.engage.data
 
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.sayollo.engage.data.EngageRepo
+import com.sayollo.engage.data.UserGameData
 
 
-class DefaultEngageRepo(context: Context) : EngageRepo {
+internal class DefaultEngageRepo(context: Context) : EngageRepo {
 
     private val sp: SharedPreferences = context.getSharedPreferences("engage_repo", Context.MODE_PRIVATE)
 

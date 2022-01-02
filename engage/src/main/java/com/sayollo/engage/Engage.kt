@@ -6,7 +6,11 @@ import android.util.Log
 import android.webkit.WebSettings
 import com.sayollo.engage.api.DefaultGamePlayAPI
 import com.sayollo.engage.api.OnGamePlayDataChanged
-import com.sayollo.engage.util.getAdsID
+import com.sayollo.engage.data.DefaultEngageRepo
+import com.sayollo.engage.data.UserData
+import com.sayollo.engage.data.UserGameData
+import com.sayollo.engage.data.UserProfile
+import com.sayollo.engage.network.SendDataToServer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -22,7 +26,7 @@ object Engage {
             override fun onChanged(userGameData: UserGameData) {
                 try {
                     CoroutineScope(GlobalScope.launch {
-                        UpdateDataInServer.run(UserData(userProfile, userGameData))
+                        SendDataToServer.run(UserData(userProfile, userGameData))
                     })
                 }catch (throwable:Throwable){
                     Log.i("TAMIR", "onChanged: ${throwable.message}")

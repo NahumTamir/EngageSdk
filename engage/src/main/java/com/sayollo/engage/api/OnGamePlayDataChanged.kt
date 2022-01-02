@@ -1,7 +1,7 @@
 package com.sayollo.engage.api
 
-import com.sayollo.engage.UserGameData
+import com.sayollo.engage.data.UserGameData
 
-interface OnGamePlayDataChanged {
+internal interface OnGamePlayDataChanged {
     fun onChanged(userGameData: UserGameData)
 }

@@ -1,6 +1,8 @@
-package com.sayollo.engage
+package com.sayollo.engage.data
 
-interface EngageRepo {
+import com.sayollo.engage.data.UserGameData
+
+internal interface EngageRepo {
     fun getTimePlayed(): Long
     fun addTimePlayed(timePlayed: Long)
     fun addAchievements(achievementsList: ArrayList<String>)

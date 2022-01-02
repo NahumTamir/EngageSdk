@@ -1,6 +1,6 @@
-package com.sayollo.engage
+package com.sayollo.engage.data
 
-data class UserGameData(
+internal data class UserGameData(
     var timePlayed: Long,
     var levelReached: Int,
     var points: Int,

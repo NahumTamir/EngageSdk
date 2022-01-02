@@ -37,11 +37,13 @@ Add the following  inside the <application> tag in your AndroidManifest:
 Google Advertising ID
 
 Step 3. Init the SDK 
+          
                     Engage.initSdk(this)
                             when (val initSdkResult = Engage.initSdk(this)){
                                 is InitResult.InitFailure -> {return}// report error to server
-                                is InitResult.InitSuccess -> gamePlayApi = initSdkResult.gamePlayAPI // The gameplay API holds all you need for interacting with Engage system
-                            }
+                                is InitResult.InitSuccess -> gamePlayApi = initSdkResult.gamePlayAPI
+                    }
+          
         
 Step 4.
 For calculating time played add these methods in the game activity

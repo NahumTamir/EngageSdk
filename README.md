@@ -15,13 +15,13 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 
 Manifest Engage credentials (Provided by the admin Engage system)
-
+{
 <application>
         <meta-data
             android:name="engage_sdk"
             android:value="developer_id" />
 <application/>
-            
+}           
 
 Step 2.          
 Google Play Services

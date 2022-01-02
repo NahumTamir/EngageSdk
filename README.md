@@ -8,6 +8,7 @@ Step 1. Add the engage SDK to Your Project
 
 Add the following to the dependencies section:
 TBD: publish Engage SDK to artifactory as an artifact aar
+
           dependencies {
             TBD 
           }

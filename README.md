@@ -13,12 +13,13 @@ TBD: publish Engage SDK to artifactory as an artifact aar
             TBD 
           }
 
-      <uses-permission android:name="android.permission.INTERNET" />
 
-Manifest Engage credentials (Provided by the admin Engage system)
+Manifest Engage credentials & Internet permissions (Provided by the admin Engage system)
 
           {
+            <uses-permission android:name="android.permission.INTERNET" />
             <application>
+            
                     <meta-data
                         android:name="engage_sdk"
                         android:value="developer_id" />

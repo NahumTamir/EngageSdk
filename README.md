@@ -8,21 +8,21 @@ Step 1. Add the engage SDK to Your Project
 
 Add the following to the dependencies section:
 TBD: publish Engage SDK to artifactory as an artifact aar
-dependencies {
-  TBD 
-}
+          dependencies {
+            TBD 
+          }
 
-<uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.INTERNET" />
 
 Manifest Engage credentials (Provided by the admin Engage system)
 
-{
-  <application>
-          <meta-data
-              android:name="engage_sdk"
-              android:value="developer_id" />
-  <application/>
-}           
+          {
+            <application>
+                    <meta-data
+                        android:name="engage_sdk"
+                        android:value="developer_id" />
+            <application/>
+          }           
 
 Step 2.          
 Google Play Services

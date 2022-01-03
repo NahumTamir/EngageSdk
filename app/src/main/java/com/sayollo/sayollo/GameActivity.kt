@@ -12,7 +12,6 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Engage.initSdk(this)
         when (val initSdkResult = Engage.initSdk(this)){
             is InitResult.InitFailure -> {return}// report error to server
             is InitResult.InitSuccess -> gamePlayApi = initSdkResult.gamePlayAPI
